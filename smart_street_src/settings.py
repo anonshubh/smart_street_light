@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'crispy_forms',
 ]
 
 LOGIN_REDIRECT_URL = "/"
@@ -54,6 +55,13 @@ SITE_ID = 1
 
 AUTH_USER_MODEL = 'profiles.User'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_SESSION_REMEMBER = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
