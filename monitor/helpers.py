@@ -16,4 +16,14 @@ def send_data_to_thingSpeak(data):
 
 
 def take_action(data):
-    pass
+    light = int(data['light'])
+    ir = int(data['ir'])
+    result = {}
+    if(light < 600):
+        result['status'] = 1 # ON
+    else:
+        result['status'] = 0 # OFF
+    
+    result['intensity'] = 30*ir
+
+    return result

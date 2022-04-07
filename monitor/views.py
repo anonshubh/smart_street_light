@@ -36,6 +36,7 @@ def create_device(request):
             instance.save()
             messages.info(request,f"New Device Successfully Created!")
             return redirect('index')
+        messages.error(request,"Form is Invalid! ,Kindly Re-Submit")
     return render(request,'monitor/create_device.html',{'form':form})
 
 
