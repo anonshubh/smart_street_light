@@ -13,7 +13,7 @@ class Device(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return (self.unique_id)
+        return str(self.unique_id)
 
 class SensorValue(models.Model):
     temperature = models.CharField(max_length=21)
@@ -25,5 +25,3 @@ class SensorValue(models.Model):
     class Meta:
         ordering = ['-timestamp']
 
-    def __str__(self):
-        return (self.timestamp)

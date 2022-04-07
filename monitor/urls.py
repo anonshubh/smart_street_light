@@ -5,5 +5,8 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("about/", views.index, name="about"),
+    path("about/", views.about, name="about"),
+
+    #APIs
+    path('api/send/',views.receive_sensor_data),
 ]

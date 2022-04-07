@@ -2,11 +2,24 @@
 
 {% block content %}
 
-{% if request.user.is_authenticated %}
-    <h1>Logged in</h1>
-{% else %}
-
-<h1>Login now</h1>
-{% endif %}
+<p><a class="mt-4 btn btn-primary btn-sm" href="">Add Device</a></p>
+<hr>
+<p class="lead">Devices List</p>
+<div class="row">
+    {% for device in devices %}
+    <div class="col">
+        <div class="card" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title">UniqueID: {{device.unique_id}}</h5>
+                <p class="card-text">Latitude: {{device.lat}} <br>Longitude: {{device.long}}</p>
+                <p class="card-text">Created Date: {{device.created_at}}</p>
+                <a href="#" class="btn btn-warning btn-sm">Sensor Details</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p>No Devices!!</p>
+    {% endfor %}
+</div>
 
 {% endblock %}
