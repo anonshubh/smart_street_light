@@ -10,4 +10,5 @@ urlpatterns = [
 
     #APIs
     path('api/send/',views.receive_sensor_data),
+    path('api/get-current/<int:id>/',views.get_current_data),
 ]
