@@ -1,0 +1,1 @@
+web: gunicorn smart_street_src.wsgi
