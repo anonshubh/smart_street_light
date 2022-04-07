@@ -20,7 +20,7 @@ def index(request):
     return render(request, "monitor/index_nouser.html")
 
 def about(request):
-    return render(request, "monitor/about.html")
+    return render(request, "about.html")
 
 @login_required
 def create_device(request):
