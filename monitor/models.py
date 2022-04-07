@@ -10,7 +10,11 @@ class Device(models.Model):
     lat = models.CharField(max_length=20)
     long = models.CharField(max_length=20)
     data = models.ManyToManyField('SensorValue')
+    is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
 
     def __str__(self):
         return str(self.unique_id)

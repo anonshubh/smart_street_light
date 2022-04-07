@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3 class="mt-2 text-center">Data Received From Sensor</h3>
+<hr>
+<p>Device ID: {{device_obj.unique_id}}</p>
+<p>Location : Latitude = {{device_obj.lat}}, Longitude = {{device_obj.long}} </p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Temperature</th>
+        <th scope="col">IR</th>
+        <th scope="col">Humidity</th>
+        <th scope="col">Light</th>
+        <th scope="col">Timestamp</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for each in data %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{each.temperature}}</td>
+        <td>{{each.ir}}</td>
+        <td>{{each.humidity}}</td>
+        <td>{{each.light}}</td>
+        <td>{{each.timestamp|date:'d-m-Y H:i'}}</td>
+      </tr>
+      {% empty %}
+      <p class="lead">No Data Yet!</p>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
