@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     # Local
     'profiles.apps.ProfilesConfig',
+    'monitor.apps.MonitorConfig',
     # External
     'allauth',
     'allauth.account',
